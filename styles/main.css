@@ -1,0 +1,150 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+  background-color: #A9A3A8;
+}  
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 5fr 5fr 0.3fr 1.7fr 1.7fr 5.3fr;
+    grid-template-rows: 0.7fr 1.3fr 11fr 1fr 1fr;
+    grid-template-rows: minmax(10%,20%);
+  }
+.item1{
+    grid-area: 3 / 2 / 4 / 4;
+    z-index: 2;
+}
+.item2{
+    grid-area: 2 / 3 / 5 / 6;
+    z-index: 1;
+}
+
+.item3{
+    grid-area: 3 / 5 / 4 / 7;
+    z-index: 2;
+}
+
+.item4{
+    grid-area: 5 / 3 / 6 / 6;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+/*Media Query Start Here */
+
+/* General Mobile (Small and Large) */
+@media (max-width: 480px) {    
+  .grid-container{
+    grid-template-columns: 2fr 5fr 1fr .5fr 1.5fr 2fr 2fr;
+    grid-template-rows: 1.2fr 2fr 8fr 2fr 1.2fr;
+    grid-template-rows: minmax(10%,auto);
+  }
+  .item1{
+    grid-area: 3 / 1 / 4 / 6;
+    z-index: 2;
+  }
+  .item2{
+    grid-area: 2 / 2 / 5 / 7;
+    z-index: 1;
+  }
+  .item3{
+    grid-area: 3 / 6 / 4 / 8;
+    z-index: 2;
+  }
+  .item4{
+    grid-area: 5 / 2 / 6 / 7;
+  }
+  .item1 img{
+    transform: translate(-30%);
+  } 
+
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {    
+  .grid-container{
+    grid-template-columns: 2fr 4fr 4fr 2.5fr 2.5fr 2.5fr 1fr;
+    grid-template-rows: 1fr 1.5fr 7fr 1.5fr 1fr;
+    grid-template-rows: minmax(10%,auto);
+  }
+  .item1{
+    grid-area: 3 / 1 / 4 / 7;
+    z-index: 2;
+  }
+  .item2{
+    grid-area: 2 / 2 / 5 / 7;
+    z-index: 1;
+  }
+  .item3{
+    grid-area: 3 / 5 / 4 / 7;
+    z-index: 2;
+  }
+  .item4{
+    grid-area: 5 / 2 / 6 / 7;
+  }
+
+  .item1 img{
+    transform: translate(-36%);
+  } 
+  .item4 img{
+    transform: translateY(-65%);
+  }
+  img{
+    width: 80%;
+    height: 90%;
+  }
+}
+
+/* Small screens, laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+ .grid-container{
+    grid-template-columns: 3fr 7fr 2.5fr 0.5fr 2fr 2fr 1.5fr;
+    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+    grid-template-rows: minmax(5%,auto);
+ }
+ 
+ .item1{
+  grid-area: 3 / 1 / 4 / 4;
+  z-index: 2;
+  }
+  .item2{
+    grid-area: 2 / 2 / 5 / 6;
+    z-index: 1;
+  }
+  .item3{
+    grid-area: 3 / 5 / 4 / 7;
+    z-index: 2;
+  }
+  .item4{
+    grid-area: 5 / 2 / 6 / 6;
+  }
+
+  .item1 img{
+    transform: translate(-26%,-20%);
+  } 
+  .item3 img{
+    transform: translateY(-20%);
+  }
+  .item4 img{
+    transform: translateY(-146%);
+  }
+  .item2 img{
+    height: 80%;
+  }
+}
+
+/* Large Screen Laptop ./ Desktops, large screens */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .grid-container{
+    grid-template-columns: .7fr 5fr 5fr .7fr 1.5fr 1.5fr 2fr;
+      grid-template-rows: 1.2fr 2fr 6fr 2fr 1.2fr;
+      grid-template-rows: minmax(5%,auto);
+  }
+}
+
